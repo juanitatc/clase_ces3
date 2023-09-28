@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Universitas 🍍</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+    <title>Verificador de Palíndromos</title>
+    <style>
+
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 200px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-top: 5px;
+      }
+
+      input[type="text"] {
+        width: 50%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      button {
+        background-color: aquamarine;
+        color: #252525;
+        padding: 10px 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      table {
+        width: 105%;
+        border-collapse: collapse;
+        margin-top: 40px;
+        border: 1px solid #ccc;
+      }
+
+      th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+    </style>
+  </head>
+  <body>
+  <h1> Generador Palíndromo</h1>
+  <label for="texto">Ingresa una palabra o frase</label>
+  <input type="text" id="texto" placeholder="Escribe aquí">
+  <button onclick="verificarPalindromo()">Verificar</button>
+
+  <table>
+    <tr>
+      <th>Texto</th>
+      <th>Resultado</th>
+    </tr>
+  </table>
+
+
+  <script>
+    function verificarPalindromo() {
+      var texto = document.getElementById("texto").value.toLowerCase().replace(/\s/g, '');
+      var textoReverso = texto.split('').reverse().join('');
+      var resultado = (texto === textoReverso) ? "Es un palíndromo" : "No es un palíndromo";
+
+      var tablaResultados = document.querySelector("table");
+      var newRow = tablaResultados.insertRow(tablaResultados.rows.length);
+      var cell1 = newRow.insertCell(0);
+      var cell2 = newRow.insertCell(1);
+      cell1.innerHTML = texto;
+      cell2.innerHTML = resultado;
+    }
+  </script>
+  </body>
+  </html>
+
+
